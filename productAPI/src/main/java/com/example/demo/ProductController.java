@@ -17,27 +17,27 @@ public class ProductController {
 	@Autowired
 	private ProductService service;
 	
-	@PostMapping("product")
+	@PostMapping("products")
 	public void add(@RequestBody ProductDto pdto) {
 		service.add(pdto);
 	}
 	
-	@GetMapping("product")
+	@GetMapping("products")
 	public ArrayList<ProductDto> productList(){
 		return service.productList();
 	}
 	
-	@GetMapping("product/{id}")
+	@GetMapping("products/{id}")
 	public ProductDto getProduct(@PathVariable int id) {
 		return service.getProduct(id);
 	}
 	
-	@PatchMapping("product/{id}")
+	@PatchMapping("products/{id}")
 	public void update(@PathVariable int id, @RequestBody ProductDto pdto) {
 		service.update(id, pdto);
 	}
 	
-	@DeleteMapping("product/{id}")
+	@DeleteMapping("products/{id}")
 	public void delete(@PathVariable int id) {
 		service.delete(id);
 	}
